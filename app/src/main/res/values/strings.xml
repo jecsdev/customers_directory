@@ -3,4 +3,7 @@
     <string name="welcome">Bienvenidos a su sistema de gestion de clientes empresariales. Por favor seleccione una empresa de la lista
         con la que desee trabajar. En caso de que no haya empresa creada o desee crear una, haga click en el botón flotante debajo.</string>
     <string name="add_new_business">Add new business</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="save_business">Save business</string>
 </resources>
