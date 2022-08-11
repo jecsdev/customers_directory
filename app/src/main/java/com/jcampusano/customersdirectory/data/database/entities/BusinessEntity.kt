@@ -10,7 +10,6 @@ data class BusinessEntity(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id") var id: Int = 0,
     @ColumnInfo(name = "name") var name: String,
-    @ColumnInfo(name = "owner") var owner: String,
-    @ColumnInfo(name = "phone") var phone: String,
-    @ColumnInfo(name = "industry") var industry: String
+    @ColumnInfo(name = "owner") var rnc: String,
+    @ColumnInfo(name = "phone") var phone: String
 )

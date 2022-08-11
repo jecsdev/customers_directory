@@ -21,10 +21,10 @@
         app:layout_constraintVertical_bias="0.2" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/addBusinessOwner"
+        android:id="@+id/addBusinessRnc"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:hint="@string/business_owner"
+        android:hint="@string/rnc"
         android:minHeight="48dp"
         android:textColorHint="#757575"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -43,22 +43,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/addBusinessOwner"
+        app:layout_constraintTop_toBottomOf="@id/addBusinessRnc"
         app:layout_constraintVertical_bias="0.10" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:layout_width="380dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/addBusinessIndustry"
-        android:minHeight="48dp"
-        android:hint="@string/industry"
-        android:textColorHint="#757575"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/addBusinessPhone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.10"
-        />
+
 
 
 

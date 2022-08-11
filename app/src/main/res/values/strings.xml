@@ -10,4 +10,5 @@
     <string name="business_owner">Nombre de proprietario</string>
     <string name="business_phone">Telefono de la empresa</string>
     <string name="industry">Industria</string>
+    <string name="rnc">RNC</string>
 </resources>
