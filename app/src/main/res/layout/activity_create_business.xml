@@ -8,44 +8,51 @@
 
 
     <com.google.android.material.textfield.TextInputEditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/addbusinessName"
-        android:text="@string/business_name"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/business_name"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.2"
-        />
+        app:layout_constraintVertical_bias="0.2" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/addBusinessOwner"
-        android:text="@string/business_owner"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/business_owner"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/addbusinessName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.10"
-        />
+        app:layout_constraintVertical_bias="0.10" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/addBusinessPhone"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/business_phone"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/addBusinessOwner"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.10"
-        />
+        app:layout_constraintVertical_bias="0.10" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:layout_width="match_parent"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:id="@+id/addBusinessIndustry"
+        android:minHeight="48dp"
+        android:hint="@string/industry"
+        android:textColorHint="#757575"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/addBusinessPhone"
@@ -63,7 +70,8 @@
         android:contentDescription="@string/save_business"
         android:id="@+id/saveBusinessFab"
         android:tint="@color/white"
-        android:src="@drawable/ic_baseline_business_24"
+        android:src="@drawable/ic_baseline_save_24"
+        android:backgroundTint="@color/blueSecondary"
         app:layout_constraintHorizontal_bias="0.96"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"

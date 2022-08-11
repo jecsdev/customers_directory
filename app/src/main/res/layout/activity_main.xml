@@ -46,6 +46,7 @@
         android:id="@+id/addBusinessFab"
         android:tint="@color/white"
         android:src="@drawable/ic_baseline_business_24"
+        android:backgroundTint="@color/blueSecondary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
