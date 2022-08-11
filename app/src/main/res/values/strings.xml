@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Customers Directory</string>
+    <string name="welcome">Bienvenidos a su sistema de gestion de clientes empresariales. Por favor seleccione una empresa de la lista
+        con la que desee trabajar. En caso de que no haya empresa creada o desee crear una, haga click en el botón flotante debajo.</string>
+    <string name="add_new_business">Add new business</string>
+</resources>
