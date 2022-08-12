@@ -13,7 +13,7 @@ import javax.inject.Inject
 @HiltViewModel
 class BusinessViewModel @Inject constructor(private val businessUseCases: BusinessUseCases) : ViewModel() {
 
-     val businessModelList = MutableLiveData<MutableList<Business>>()
+    val businessModelList = MutableLiveData<MutableList<Business>>()
 
     fun getBusiness(){
         viewModelScope.launch {
@@ -27,4 +27,6 @@ class BusinessViewModel @Inject constructor(private val businessUseCases: Busine
             businessUseCases.insertBusiness(business)
         }
     }
+
+
 }

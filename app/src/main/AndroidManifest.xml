@@ -15,6 +15,9 @@
         android:theme="@style/Theme.CustomersDirectory"
         tools:targetApi="31">
         <activity
+            android:name=".ui.view.activities.CreateCustomersActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.view.activities.CustomersListActivity"
             android:exported="false" />
         <activity

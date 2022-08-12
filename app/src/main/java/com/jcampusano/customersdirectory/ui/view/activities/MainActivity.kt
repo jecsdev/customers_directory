@@ -54,7 +54,13 @@ class MainActivity : AppCompatActivity() {
         businessViewModel.businessModelList.observe(this){business ->
             recyclerViewBusiness.adapter = BusinessAdapter(business, object : ClickListener {
                 override fun onClick(view: View, position: Int) {
+                    val intent = Intent(this@MainActivity, CustomersListActivity::class.java)
+                    val currentBusiness = business[position]
+                    intent.putExtra("businessName", currentBusiness.name)
+                    intent.putExtra("businessId", currentBusiness.id)
+                    intent.putExtra("position", position)
 
+                    startActivity(intent)
                 }
 
                 override fun onLongClick(v: View?, position: Int): Boolean {

@@ -18,7 +18,7 @@ import javax.inject.Inject
 class CustomersViewModel @Inject constructor(private val customersDao: CustomersDao): ViewModel() {
     val customersModelList = MutableLiveData<MutableList<Customer>>()
     val business = MutableLiveData<Business>()
-
+    val addressLiveData = MutableLiveData<HashMap<Int, String>>()
 
 
     fun getCustomers() {

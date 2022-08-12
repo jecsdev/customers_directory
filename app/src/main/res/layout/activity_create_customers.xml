@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    tools:context=".ui.view.activities.CreateBusinessActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/customerNameTxt"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/customer_name"
+            android:minHeight="48dp"
+            android:textColorHint="#757575"
+            android:inputType="text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.2" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/customer_rnc"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/rnc"
+            android:minHeight="48dp"
+            android:textColorHint="#757575"
+            android:inputType="text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/customerNameTxt"
+            app:layout_constraintVertical_bias="0.10" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/customer_phone"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/customer_phone"
+            android:minHeight="48dp"
+            android:textColorHint="#757575"
+            android:inputType="text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/customer_rnc"
+            app:layout_constraintVertical_bias="0.10" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/customerAddress"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/customer_address"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:textColorHint="#757575"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/customer_phone"
+            app:layout_constraintTop_toBottomOf="@id/customer_phone"
+            app:layout_constraintVertical_bias="0.10" />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:id="@+id/addAddressBtn"
+            android:text="agregar"
+            android:backgroundTint="@color/blueSecondary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/customerAddress"
+            app:layout_constraintBottom_toTopOf="@id/saveCustomersFab"
+            app:layout_constraintTop_toBottomOf="@id/customer_phone"
+            app:layout_constraintVertical_bias="0.12"
+            android:layout_marginEnd="5dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="0dp"
+            android:layout_height="180dp"
+            android:id="@+id/addressRecyclerView"
+            android:nestedScrollingEnabled="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/customerAddress"
+            app:layout_constraintVertical_bias="0.1"/>
+
+
+
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="@string/save_customer"
+            android:id="@+id/saveCustomersFab"
+            android:src="@drawable/ic_baseline_save_24"
+            android:backgroundTint="@color/blueSecondary"
+            app:tint="@color/white"
+            app:layout_constraintHorizontal_bias="0.96"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</androidx.core.widget.NestedScrollView>

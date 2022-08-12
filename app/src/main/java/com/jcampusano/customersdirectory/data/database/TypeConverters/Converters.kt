@@ -9,7 +9,7 @@ object Converters {
 
     @JvmStatic
     @TypeConverter
-    fun toSqlValue(value: Map<String, String?>?): String {
+    fun toSqlValue(value: Map<Int, String?>?): String {
         if(value == null)
             return ""
 
@@ -19,7 +19,7 @@ object Converters {
             if (currentValue.isNullOrEmpty())
                 continue
 
-            jObject.put(key, currentValue)
+            jObject.put(key.toString(), currentValue)
         }
 
         return jObject.toString()
@@ -27,8 +27,8 @@ object Converters {
 
     @JvmStatic
     @TypeConverter
-    fun fromSqlValue(value: String): Map<String, String?> {
-        val result = mutableMapOf<String, String?>()
+    fun fromSqlValue(value: String): Map<Int, String?> {
+        val result = mutableMapOf<Int, String?>()
         if (value.isEmpty() || value.isBlank())
             return result
 
@@ -40,7 +40,7 @@ object Converters {
                 if (currentValue.isNullOrEmpty())
                     continue
 
-                result[key] = currentValue
+                result[key.toInt()] = currentValue
             }
         } catch (e: Exception) {
         }

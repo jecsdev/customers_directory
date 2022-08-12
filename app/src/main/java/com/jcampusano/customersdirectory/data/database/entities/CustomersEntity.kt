@@ -13,5 +13,5 @@ data class CustomersEntity(
     @ColumnInfo(name = "rnc") var rnc: String,
     @ColumnInfo(name = "phone") var phone: String,
     @ColumnInfo(name = "businessId") var businessId: Int,
-    @ColumnInfo(name = "address") var address: Map<String, String>? = null
+    @ColumnInfo(name = "address") var address: Map<Int, String>? = null
 )

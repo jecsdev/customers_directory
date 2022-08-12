@@ -8,7 +8,7 @@ data class Customer(
     var phone: String,
     var rnc: String,
     var businessId: Int,
-    var address: Map<String, String>? = null
+    var address: Map<Int, String>? = null
 )
 fun CustomersEntity.toDomain() = Customer(
     id = id,
