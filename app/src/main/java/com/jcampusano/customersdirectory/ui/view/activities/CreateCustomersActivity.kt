@@ -1,6 +1,5 @@
 package com.jcampusano.customersdirectory.ui.view.activities
 
-import android.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
@@ -8,6 +7,7 @@ import android.view.View
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.jcampusano.customersdirectory.data.database.entities.CustomerEntity
 import com.jcampusano.customersdirectory.databinding.ActivityCreateCustomersBinding
 import com.jcampusano.customersdirectory.ui.adapters.AddressAdapter
 import com.jcampusano.customersdirectory.ui.listeners.ClickListener
@@ -25,7 +25,8 @@ class CreateCustomersActivity : AppCompatActivity() {
         setContentView(view)
 
         title = "Creación de cliente"
-
+        val bundle = intent.extras
+        val businessId = bundle?.getInt("businessId")
         val customerName = binding.customerNameTxt
         val customerRnc = binding.customerRnc
         val customerPhone = binding.customerPhone
@@ -55,7 +56,7 @@ class CreateCustomersActivity : AppCompatActivity() {
                 }
 
                 override fun onLongClick(v: View?, position: Int): Boolean {
-                    val builder = AlertDialog.Builder(this@CreateCustomersActivity)
+                    /*val builder = AlertDialog.Builder(this@CreateCustomersActivity)
                     builder.setTitle("Borrar")
                     builder.setMessage("Esta seguro de querer borrar este elemento?")
                     builder.setPositiveButton("Si") { _, _ ->
@@ -63,7 +64,7 @@ class CreateCustomersActivity : AppCompatActivity() {
                         recyclerView.adapter?.notifyItemRemoved(position)
 
                     }
-                    builder.setNegativeButton("Cancelar", null).show()
+                    builder.setNegativeButton("Cancelar", null).show()*/
                     return true
                 }
             })
@@ -79,6 +80,19 @@ class CreateCustomersActivity : AppCompatActivity() {
             }
             if(TextUtils.isEmpty(customerPhone.text)){
                 customerPhone.error = "Este campo no puede estar vacio."
+            }
+
+            val customer = businessId?.let { businessId ->
+                CustomerEntity(name = customerName.text.toString(),
+                    rnc = customerRnc.text.toString(),
+                    phone = customerPhone.text.toString(), businessId = businessId,
+                    address = address
+                )
+            }
+
+            if (customer != null) {
+                customersViewModel.addCustomer(customer)
+                finish()
             }
 
 

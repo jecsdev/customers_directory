@@ -1,6 +1,6 @@
 package com.jcampusano.customersdirectory.domain.model
 
-import com.jcampusano.customersdirectory.data.database.entities.CustomersEntity
+import com.jcampusano.customersdirectory.data.database.entities.CustomerEntity
 
 data class Customer(
     var id: Int,
@@ -8,9 +8,9 @@ data class Customer(
     var phone: String,
     var rnc: String,
     var businessId: Int,
-    var address: Map<Int, String>? = null
+    var address: Map<Int, String>?
 )
-fun CustomersEntity.toDomain() = Customer(
+fun CustomerEntity.toDomain() = Customer(
     id = id,
     name = name,
     phone = phone,

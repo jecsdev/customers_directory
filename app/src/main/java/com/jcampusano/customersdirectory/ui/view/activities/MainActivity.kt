@@ -31,10 +31,6 @@ class MainActivity : AppCompatActivity() {
         initializeAdapter()
 
 
-
-
-
-
         val fab = binding.addBusinessFab
         fab.setOnClickListener{
             val intent = Intent(this@MainActivity, CreateBusinessActivity::class.java)
@@ -66,9 +62,18 @@ class MainActivity : AppCompatActivity() {
                 override fun onLongClick(v: View?, position: Int): Boolean {
                     return true
                 }
-
             })
-            recyclerViewBusiness.adapter?.notifyDataSetChanged()
+
         }
+    }
+
+    override fun onResume() {
+        initializeAdapter()
+        super.onResume()
+    }
+
+    override fun onRestart() {
+        initializeAdapter()
+        super.onRestart()
     }
 }

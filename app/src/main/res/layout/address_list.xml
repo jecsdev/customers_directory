@@ -8,7 +8,7 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/businessCard"
+        android:id="@+id/customerCard"
         android:background="?attr/selectableItemBackground"
         card_view:cardBackgroundColor="@color/colorWhite"
         card_view:cardCornerRadius="10dp"

@@ -21,7 +21,7 @@ class CreateBusinessActivity : AppCompatActivity() {
         setContentView(view)
         title = "Crear nueva empresa"
 
-        val businessName = binding.addbusinessName
+        val businessName = binding.addBusinessName
         val businessRnc = binding.addBusinessRnc
         val businessPhone = binding.addBusinessPhone
 
