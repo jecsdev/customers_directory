@@ -5,15 +5,16 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.jcampusano.customersdirectory.R
 import com.jcampusano.customersdirectory.domain.model.Business
+import com.jcampusano.customersdirectory.ui.listeners.ClickListener
 import com.jcampusano.customersdirectory.ui.viewHolders.BusinessViewHolder
 
-class BusinessAdapter(private val businessList: MutableList<Business> ): RecyclerView.Adapter<BusinessViewHolder>() {
+class BusinessAdapter(private val businessList: MutableList<Business>, private val clickListener: ClickListener ): RecyclerView.Adapter<BusinessViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BusinessViewHolder {
         val layout = LayoutInflater.from(parent.context).inflate(
             R.layout.business_list,
             parent, false
         )
-        return BusinessViewHolder(layout)
+        return BusinessViewHolder(layout, clickListener)
     }
 
     override fun onBindViewHolder(holder: BusinessViewHolder, position: Int) {

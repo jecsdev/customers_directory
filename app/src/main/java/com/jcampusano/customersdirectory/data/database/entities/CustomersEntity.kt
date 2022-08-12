@@ -10,7 +10,8 @@ data class CustomersEntity(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id") var id: Int,
     @ColumnInfo(name = "name") var name: String,
+    @ColumnInfo(name = "rnc") var rnc: String,
     @ColumnInfo(name = "phone") var phone: String,
-    @ColumnInfo(name = "bussinessId") var businessId: Int,
+    @ColumnInfo(name = "businessId") var businessId: Int,
     @ColumnInfo(name = "address") var address: Map<String, String>? = null
 )

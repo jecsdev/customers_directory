@@ -3,6 +3,7 @@ package com.jcampusano.customersdirectory.di
 import android.content.Context
 import androidx.room.Room
 import com.jcampusano.customersdirectory.data.database.BusinessDatabase
+import com.jcampusano.customersdirectory.domain.model.Customer
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -24,4 +25,9 @@ object RoomModule {
     @Singleton
     @Provides
     fun provideBusinessDao(db: BusinessDatabase) = db.getBusinessDao()
+
+
+    @Singleton
+    @Provides
+    fun provideCustomersDao(db: BusinessDatabase) = db.getCustomersDao()
 }

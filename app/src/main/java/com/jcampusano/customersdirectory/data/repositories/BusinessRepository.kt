@@ -13,6 +13,7 @@ class BusinessRepository @Inject constructor(private val businessDao: BusinessDa
         return response.map {it.toDomain()}
     }
 
+
     suspend fun insertBusiness(business: BusinessEntity){
         businessDao.insertBusiness(business)
     }

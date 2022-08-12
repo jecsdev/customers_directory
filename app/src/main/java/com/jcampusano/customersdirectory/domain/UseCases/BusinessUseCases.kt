@@ -1,4 +1,4 @@
-package com.jcampusano.customersdirectory.domain
+package com.jcampusano.customersdirectory.domain.UseCases
 
 import com.jcampusano.customersdirectory.data.database.entities.BusinessEntity
 import com.jcampusano.customersdirectory.data.repositories.BusinessRepository
@@ -9,6 +9,7 @@ class BusinessUseCases @Inject constructor(private val businessRepository: Busin
     suspend operator fun invoke(): List<Business>{
         return businessRepository.getAllBusinessFromDatabase()
     }
+
 
     suspend fun insertBusiness(business: BusinessEntity){
         return businessRepository.insertBusiness(business)

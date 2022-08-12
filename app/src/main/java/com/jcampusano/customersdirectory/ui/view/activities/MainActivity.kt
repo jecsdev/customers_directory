@@ -3,11 +3,13 @@ package com.jcampusano.customersdirectory.ui.view.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.jcampusano.customersdirectory.databinding.ActivityMainBinding
 import com.jcampusano.customersdirectory.ui.adapters.BusinessAdapter
+import com.jcampusano.customersdirectory.ui.listeners.ClickListener
 import com.jcampusano.customersdirectory.ui.viewModels.BusinessViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -49,8 +51,17 @@ class MainActivity : AppCompatActivity() {
 
     private fun observeAdapter() {
 
-        businessViewModel.businessModelList.observe(this){
-            recyclerViewBusiness.adapter = BusinessAdapter(it)
+        businessViewModel.businessModelList.observe(this){business ->
+            recyclerViewBusiness.adapter = BusinessAdapter(business, object : ClickListener {
+                override fun onClick(view: View, position: Int) {
+
+                }
+
+                override fun onLongClick(v: View?, position: Int): Boolean {
+                    return true
+                }
+
+            })
             recyclerViewBusiness.adapter?.notifyDataSetChanged()
         }
     }

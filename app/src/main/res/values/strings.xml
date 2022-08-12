@@ -11,4 +11,5 @@
     <string name="business_phone">Telefono de la empresa</string>
     <string name="industry">Industria</string>
     <string name="rnc">RNC</string>
+    <string name="customers_welcome">Bienvenid@, por favor seleccione el cliente que desea consultar. En caso de que no hayan clientes o desee crear uno, presione el botón flotante que esta en la esquina inferior derecha.</string>
 </resources>

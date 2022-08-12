@@ -33,19 +33,16 @@ class CreateBusinessActivity : AppCompatActivity() {
             }
             if(TextUtils.isEmpty(businessRnc.text)){
                 businessRnc.error = "Este campo no puede estar vacio."
-            }else if(businessRnc.text?.length!! != 11){
-                businessRnc.error = "Por favor digite un námero RNC válido."
             }
             if(TextUtils.isEmpty(businessPhone.text)){
                 businessPhone.error = "Este campo no puede estar vacio."
-            }else if(businessPhone.text?.length != 10){
-                businessPhone.error = "Por favor digite un número telefónico válido."
             }
 
 
             val business = BusinessEntity(name = businessName.text.toString(),
             rnc = businessRnc.text.toString(),
             phone = businessPhone.text.toString())
+
 
             businessViewModel.createBusiness(business)
             finish()

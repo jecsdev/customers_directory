@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.jcampusano.customersdirectory.data.database.entities.BusinessEntity
-import com.jcampusano.customersdirectory.domain.BusinessUseCases
+import com.jcampusano.customersdirectory.domain.UseCases.BusinessUseCases
 import com.jcampusano.customersdirectory.domain.model.Business
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
