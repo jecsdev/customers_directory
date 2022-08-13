@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        businessViewModel.getBusiness()
+
 
         recyclerViewBusiness = binding.recyclerMain
         initializeAdapter()
@@ -52,6 +52,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initializeAdapter() {
+        businessViewModel.getBusiness()
         recyclerViewBusiness.layoutManager = viewManager
         observeAdapter()
     }
@@ -104,9 +105,5 @@ class MainActivity : AppCompatActivity() {
         initializeAdapter()
     }
 
-    override fun onRestart() {
 
-        super.onRestart()
-        initializeAdapter()
-    }
 }

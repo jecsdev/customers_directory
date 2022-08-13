@@ -1,5 +1,6 @@
 package com.jcampusano.customersdirectory.ui.view.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
@@ -46,6 +47,7 @@ class CreateBusinessActivity : AppCompatActivity() {
 
             businessViewModel.createBusiness(business)
             finish()
+
         }
 
     }

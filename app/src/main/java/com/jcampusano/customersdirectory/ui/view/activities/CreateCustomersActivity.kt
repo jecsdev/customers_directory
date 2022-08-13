@@ -58,24 +58,33 @@ class CreateCustomersActivity : AppCompatActivity() {
             if(TextUtils.isEmpty(customerName.text)){
                 customerName.error = "Este campo no puede estar vacio."
             }
-            if(TextUtils.isEmpty(customerRnc.text)){
+             if(TextUtils.isEmpty(customerRnc.text)){
                 customerRnc.error = "Este campo no puede estar vacio."
             }
-            if(TextUtils.isEmpty(customerPhone.text)){
+             if(TextUtils.isEmpty(customerPhone.text)){
                 customerPhone.error = "Este campo no puede estar vacio."
             }
-
-            val customer = businessId?.let { businessId ->
-                CustomerEntity(name = customerName.text.toString(),
-                    rnc = customerRnc.text.toString(),
-                    phone = customerPhone.text.toString(), businessId = businessId,
-                    address = address
-                )
+            if(address.isEmpty()){
+                customerAddress.error = "Debe seleccionar al menos 1 dirección."
             }
 
-            if (customer != null) {
-                customersViewModel.addCustomer(customer)
+            if(address.isNotEmpty()  && customerName.text!!.isNotEmpty()
+                && customerRnc.text!!.isNotEmpty()  && customerPhone.text!!.isNotEmpty()) {
+                val customer = businessId?.let { businessId ->
+                    CustomerEntity(
+                        name = customerName.text.toString(),
+                        rnc = customerRnc.text.toString(),
+                        phone = customerPhone.text.toString(), businessId = businessId,
+                        address = address
+                    )
+
+
+                }
+                if (customer != null) {
+                    customersViewModel.addCustomer(customer)
+                }
                 finish()
+
             }
 
 

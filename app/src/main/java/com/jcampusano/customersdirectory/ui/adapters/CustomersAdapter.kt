@@ -29,6 +29,7 @@ class CustomersAdapter(private val customerList: MutableList<Customer>, private 
             customer.address as HashMap<Int, String>
         )
 
+
     }
 
     override fun getItemCount(): Int = customerList.size

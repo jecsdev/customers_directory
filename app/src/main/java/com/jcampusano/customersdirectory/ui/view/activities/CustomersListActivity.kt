@@ -33,13 +33,15 @@ class CustomersListActivity : AppCompatActivity() {
 
 
         val businessId = bundle?.getInt("businessId")
-        businessId?.let { customersViewModel.getCustomers(businessId = it) }
         val fab = binding.AddCustomersFab
         val customerList = binding.CustomersLabel
         recyclerViewCustomers = binding.recyclerCustomersList
 
-        customersViewModel.business.postValue(businessId)
-        initializeAdapter()
+        if (businessId != null) {
+            initializeAdapter(businessId)
+            customersViewModel.getCustomers(businessId)
+            customersViewModel.business.postValue(businessId)
+        }
 
         customersViewModel.customersModelList.observe(this){
             if(it.isNullOrEmpty()){
@@ -55,7 +57,8 @@ class CustomersListActivity : AppCompatActivity() {
 
     }
 
-    private fun initializeAdapter() {
+    private fun initializeAdapter(businessId: Int) {
+        customersViewModel.getCustomers(businessId)
         recyclerViewCustomers.layoutManager = viewManager
         observeAdapter()
     }
@@ -81,6 +84,8 @@ class CustomersListActivity : AppCompatActivity() {
                         val id = it[position].id
                         val customer = CustomerEntity( id = id,name = customerName, rnc = customerRnc,
                         phone =  customerPhone, businessId = businessId, address = address)
+                        it.removeAt(position)
+                        recyclerViewCustomers.adapter?.notifyItemRemoved(position)
                         customersViewModel.deleteCustomer(customer)
                     }
                     builder.setNegativeButton("Cancelar", null).show()
@@ -92,5 +97,12 @@ class CustomersListActivity : AppCompatActivity() {
             })
 
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val bundle = intent.extras
+        val businessId = bundle?.getInt("businessId")
+        businessId?.let { initializeAdapter(it) }
     }
 }
