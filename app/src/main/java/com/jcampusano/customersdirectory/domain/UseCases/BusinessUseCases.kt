@@ -14,4 +14,8 @@ class BusinessUseCases @Inject constructor(private val businessRepository: Busin
     suspend fun insertBusiness(business: BusinessEntity){
         return businessRepository.insertBusiness(business)
     }
+
+    suspend fun deleteBusiness(business: BusinessEntity){
+        return businessRepository.deleteBusiness(business)
+    }
 }

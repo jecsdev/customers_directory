@@ -50,24 +50,7 @@ class CreateCustomersActivity : AppCompatActivity() {
 
         customersViewModel.addressLiveData.observe(this){
             recyclerView.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
-            recyclerView.adapter = AddressAdapter(it, object:ClickListener {
-                override fun onClick(view: View, position: Int) {
-
-                }
-
-                override fun onLongClick(v: View?, position: Int): Boolean {
-                    /*val builder = AlertDialog.Builder(this@CreateCustomersActivity)
-                    builder.setTitle("Borrar")
-                    builder.setMessage("Esta seguro de querer borrar este elemento?")
-                    builder.setPositiveButton("Si") { _, _ ->
-                        it.remove(position)
-                        recyclerView.adapter?.notifyItemRemoved(position)
-
-                    }
-                    builder.setNegativeButton("Cancelar", null).show()*/
-                    return true
-                }
-            })
+            recyclerView.adapter = AddressAdapter(it)
 
         }
 

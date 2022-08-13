@@ -35,5 +35,11 @@ class CustomersViewModel @Inject constructor(private val customersUseCases: Cust
         }
     }
 
+    fun deleteCustomer(customer: CustomerEntity){
+        viewModelScope.launch {
+            customersUseCases.deleteCustomer(customer)
+        }
+    }
+
 
 }

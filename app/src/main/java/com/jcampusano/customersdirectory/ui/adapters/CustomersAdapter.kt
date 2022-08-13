@@ -1,6 +1,9 @@
 package com.jcampusano.customersdirectory.ui.adapters
 
+import android.content.Context
+
 import android.view.LayoutInflater
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.jcampusano.customersdirectory.R
@@ -22,12 +25,20 @@ class CustomersAdapter(private val customerList: MutableList<Customer>, private 
         holder.customerName.text = customer.name
         holder.customerRnc.text = customer.rnc
         holder.customerPhone.text = customer.phone
-        customer.address?.forEach {
-            holder.customerAddress.text = it.value
-        }
+        getAddressList(holder.itemView.context, holder.addressRecyclerView,
+            customer.address as HashMap<Int, String>
+        )
 
     }
 
     override fun getItemCount(): Int = customerList.size
+
+
+
+    private fun getAddressList(context: Context, recyclerView: RecyclerView, address: HashMap<Int, String>){
+        val adapter = AddressAdapter(address)
+        recyclerView.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+        recyclerView.adapter = adapter
+    }
 
 }

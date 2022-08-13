@@ -12,6 +12,7 @@
         android:background="?attr/selectableItemBackground"
         card_view:cardBackgroundColor="@color/colorWhite"
         card_view:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
         card_view:layout_constraintStart_toStartOf="parent"
         card_view:layout_constraintEnd_toEndOf="parent"
         card_view:layout_constraintTop_toTopOf="parent">
@@ -30,7 +31,7 @@
                 android:textSize="16sp"
                 android:layout_marginTop="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.02"
+                app:layout_constraintHorizontal_bias="0.06"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -41,7 +42,7 @@
                 android:layout_marginTop="5dp"
                 android:text="@string/rnc"
                 android:textColor="@color/black"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="@+id/customerNameListTv"
                 app:layout_constraintTop_toBottomOf="@id/customerNameListTv" />
 
@@ -52,19 +53,20 @@
                 android:layout_marginTop="5dp"
                 android:text="@string/business_phone"
                 android:textColor="@color/black"
-                android:textSize="12sp"
+                android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="@+id/customerNameListTv"
                 app:layout_constraintTop_toBottomOf="@id/customerRncListTv" />
 
-            <TextView
-                android:layout_width="wrap_content"
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:id="@+id/customerAddressListTv"
-                android:text="@string/customer_address"
-                android:textColor="@color/black"
+                android:id="@+id/addressListRecycler"
                 app:layout_constraintStart_toStartOf="@id/customerNameListTv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/customerPhoneListTv"/>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>

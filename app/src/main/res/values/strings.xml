@@ -16,4 +16,6 @@
     <string name="customer_phone">Teléfono del cliente</string>
     <string name="save_customer">Guardar cliente</string>
     <string name="customer_address">Dirección del cliente</string>
+    <string name="business">Empresas disponibles</string>
+    <string name="customers">Clientes disponibles</string>
 </resources>

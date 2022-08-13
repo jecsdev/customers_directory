@@ -28,5 +28,11 @@ class BusinessViewModel @Inject constructor(private val businessUseCases: Busine
         }
     }
 
+    fun deleteBusiness(business: BusinessEntity){
+        viewModelScope.launch {
+            businessUseCases.deleteBusiness(business)
+        }
+    }
+
 
 }

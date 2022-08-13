@@ -8,13 +8,13 @@ import com.jcampusano.customersdirectory.ui.listeners.ClickListener
 import com.jcampusano.customersdirectory.ui.viewHolders.AddressViewHolder
 
 
-class AddressAdapter(private val addressList: HashMap<Int, String>, private val clickListener: ClickListener): RecyclerView.Adapter<AddressViewHolder>() {
+class AddressAdapter(private val addressList: HashMap<Int, String>): RecyclerView.Adapter<AddressViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AddressViewHolder {
         val layout = LayoutInflater.from(parent.context).inflate(
             R.layout.address_list,
             parent, false
         )
-        return AddressViewHolder(layout, clickListener)
+        return AddressViewHolder(layout)
     }
 
     override fun onBindViewHolder(holder: AddressViewHolder, position: Int) {

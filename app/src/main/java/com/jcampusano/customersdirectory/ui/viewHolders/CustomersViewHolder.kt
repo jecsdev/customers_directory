@@ -15,7 +15,7 @@ View.OnLongClickListener{
     val customerName: TextView = itemView.findViewById(R.id.customerNameListTv)
     val customerRnc: TextView = itemView.findViewById(R.id.customerRncListTv)
     val customerPhone: TextView = itemView.findViewById(R.id.customerPhoneListTv)
-    val customerAddress: TextView = itemView.findViewById(R.id.customerAddressListTv)
+    val addressRecyclerView: RecyclerView = itemView.findViewById(R.id.addressListRecycler)
 
     init {
         itemView.setOnClickListener(this)

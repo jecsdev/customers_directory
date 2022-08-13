@@ -5,8 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
+import androidx.appcompat.app.AlertDialog
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.jcampusano.customersdirectory.data.database.entities.BusinessEntity
+import com.jcampusano.customersdirectory.data.database.entities.CustomerEntity
 import com.jcampusano.customersdirectory.databinding.ActivityMainBinding
 import com.jcampusano.customersdirectory.ui.adapters.BusinessAdapter
 import com.jcampusano.customersdirectory.ui.listeners.ClickListener
@@ -29,6 +33,13 @@ class MainActivity : AppCompatActivity() {
 
         recyclerViewBusiness = binding.recyclerMain
         initializeAdapter()
+        val businessName = binding.businessLabel
+
+        businessViewModel.businessModelList.observe(this) {
+            if (it.isEmpty()) {
+                businessName.visibility = View.GONE
+            }
+        }
 
 
         val fab = binding.addBusinessFab
@@ -60,20 +71,41 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 override fun onLongClick(v: View?, position: Int): Boolean {
+                    val builder = AlertDialog.Builder(this@MainActivity)
+                    builder.setTitle("Borrar")
+                    builder.setMessage("Esta seguro de querer borrar este elemento?")
+                    builder.setPositiveButton("Si") { _, _ ->
+
+                        val businessName = business[position].name
+                        val businessRnc = business[position].rnc
+                        val businessPhone = business[position].phone
+                        val businessId = business[position].id
+                        val businessData = BusinessEntity(
+                            id = businessId, name = businessName, rnc = businessRnc,
+                            phone = businessPhone
+                        )
+                        businessViewModel.deleteBusiness(businessData)
+
+                    }
+                    builder.setNegativeButton("Cancelar", null).show()
                     return true
                 }
+
             })
 
         }
+
     }
 
     override fun onResume() {
-        initializeAdapter()
+
         super.onResume()
+        initializeAdapter()
     }
 
     override fun onRestart() {
-        initializeAdapter()
+
         super.onRestart()
+        initializeAdapter()
     }
 }

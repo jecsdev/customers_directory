@@ -17,4 +17,8 @@ class BusinessRepository @Inject constructor(private val businessDao: BusinessDa
     suspend fun insertBusiness(business: BusinessEntity){
         businessDao.insertBusiness(business)
     }
+
+    suspend fun deleteBusiness(business: BusinessEntity){
+        businessDao.deleteBusiness(business)
+    }
 }

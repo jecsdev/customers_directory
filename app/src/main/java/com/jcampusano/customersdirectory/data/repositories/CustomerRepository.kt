@@ -1,6 +1,5 @@
 package com.jcampusano.customersdirectory.data.repositories
 
-import androidx.lifecycle.MutableLiveData
 import com.jcampusano.customersdirectory.data.database.dao.CustomersDao
 import com.jcampusano.customersdirectory.data.database.entities.CustomerEntity
 import com.jcampusano.customersdirectory.domain.model.Customer
@@ -15,5 +14,9 @@ class CustomerRepository @Inject constructor(private val customersDao: Customers
 
     suspend fun insertCustomer(customer: CustomerEntity){
         customersDao.insertCustomer(customer)
+    }
+
+    suspend fun deleteCustomer(customer: CustomerEntity){
+        customersDao.deleteCustomer(customer)
     }
 }
