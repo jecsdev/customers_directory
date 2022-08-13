@@ -18,4 +18,5 @@
     <string name="customer_address">Dirección del cliente</string>
     <string name="business">Empresas disponibles</string>
     <string name="customers">Clientes disponibles</string>
+    <string name="add">agregar</string>
 </resources>
