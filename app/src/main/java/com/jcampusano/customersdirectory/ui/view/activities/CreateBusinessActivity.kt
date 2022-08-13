@@ -39,14 +39,18 @@ class CreateBusinessActivity : AppCompatActivity() {
                 businessPhone.error = "Este campo no puede estar vacio."
             }
 
+            if(businessName.text!!.isNotEmpty() && businessRnc.text!!.isNotEmpty() && businessPhone.text!!.isNotEmpty()){
+                val business = BusinessEntity(name = businessName.text.toString(),
+                    rnc = businessRnc.text.toString(),
+                    phone = businessPhone.text.toString())
 
-            val business = BusinessEntity(name = businessName.text.toString(),
-            rnc = businessRnc.text.toString(),
-            phone = businessPhone.text.toString())
+
+                businessViewModel.createBusiness(business)
+                finish()
+            }
 
 
-            businessViewModel.createBusiness(business)
-            finish()
+
 
         }
 
