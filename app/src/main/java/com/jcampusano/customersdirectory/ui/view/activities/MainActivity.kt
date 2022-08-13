@@ -84,13 +84,14 @@ class MainActivity : AppCompatActivity() {
                             id = businessId, name = businessName, rnc = businessRnc,
                             phone = businessPhone
                         )
-                        businessViewModel.deleteBusiness(businessData)
+                        business.removeAt(position)
 
+                        recyclerViewBusiness.adapter?.notifyItemRemoved(position)
+                        businessViewModel.deleteBusiness(businessData)
                     }
                     builder.setNegativeButton("Cancelar", null).show()
                     return true
                 }
-
             })
 
         }
