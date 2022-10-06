@@ -9,7 +9,7 @@ import com.jcampusano.customersdirectory.data.database.dao.CustomersDao
 import com.jcampusano.customersdirectory.data.database.entities.BusinessEntity
 import com.jcampusano.customersdirectory.data.database.entities.CustomerEntity
 
-@Database(entities = [BusinessEntity::class, CustomerEntity::class], version = 1)
+@Database(entities = [BusinessEntity::class, CustomerEntity::class], version = 1, exportSchema = false)
 @TypeConverters(Converters::class)
 abstract class BusinessDatabase: RoomDatabase() {
     abstract fun getBusinessDao(): BusinessDao
